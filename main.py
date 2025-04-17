@@ -112,11 +112,12 @@ def main_loop():
                 print("Could not fetch remote version")
         else:
             print("Skipping OTA check (no Wi‑Fi)")
-        print("New program!!!!!!!")
+            
         # heartbeat for 3 minutes (180 s), blinking once per sec
         for _ in range(360):
             led.toggle()
             time.sleep(0.5)
+            print("New program!!!!!!!")
 
 # kick off
 main_loop()

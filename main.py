@@ -64,18 +64,20 @@ def reboot():
 
 # === Main Flow ===
 connect_wifi()
-blink_led()
-time.sleep(10)
-blink_led(20,0.2)
-local_version = read_local_version()
-remote_version = get_remote_version()
-
-if remote_version and remote_version != local_version:
-    print(f"New version available: {remote_version} (current: {local_version})")
-    if download_update():
-        write_version(remote_version)
-        reboot()
-else:
-    print("No update needed.")
-
-
+while True:
+    blink_led()
+    time.sleep(10)
+    blink_led(20,0.2)
+    time.sleep(1)
+    blink_led(5,2)
+    time.sleep(1)
+    local_version = read_local_version()
+    remote_version = get_remote_version()
+    
+    if remote_version and remote_version != local_version:
+        print(f"New version available: {remote_version} (current: {local_version})")
+        if download_update():
+            write_version(remote_version)
+            reboot()
+    else:
+        print("No update needed.")

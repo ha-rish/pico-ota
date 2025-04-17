@@ -66,7 +66,7 @@ def reboot():
 connect_wifi()
 blink_led()
 time.sleep(10)
-blink_led(10,0.2)
+blink_led(20,0.2)
 local_version = read_local_version()
 remote_version = get_remote_version()
 

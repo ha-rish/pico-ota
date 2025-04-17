@@ -114,7 +114,7 @@ def main_loop():
             print("Skipping OTA check (no Wi‑Fi)")
             
         # heartbeat for 3 minutes (180 s), blinking once per sec
-        for _ in range(360):
+        for _ in range(180):
             led.toggle()
             time.sleep(0.5)
             print("New program!!!!!!!")
